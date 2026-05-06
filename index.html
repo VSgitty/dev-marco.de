@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Lorenz · Frontend Developer</title>
+  <meta name="description" content="Marco Lorenz – Frontend Developer & IHK Fachinformatiker AE. Interaktive Weberlebnisse, saubere UIs, stabile Features. Rodgau, Deutschland." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <canvas id="loaderCanvas"></canvas>
+    <div class="loader-ui">
+      <div class="loader-logo">MARCO<span class="neon">.EXE</span></div>
+      <div class="loader-sub">INITIALIZING PORTFOLIO v2.6</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill" id="loaderBar"></div>
+      </div>
+      <div class="loader-status-row">
+        <span class="loader-status" id="loaderStatus">Loading assets...</span>
+        <span class="loader-pct" id="loaderPct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="mainNav">
+    <a href="#hero" class="nav-logo">M<span class="neon">.EXE</span></a>
+    <ul class="nav-links">
+      <li><a href="#about"      class="nl" data-n="01">ABOUT</a></li>
+      <li><a href="#skills"     class="nl" data-n="02">SKILLS</a></li>
+      <li><a href="#projects"   class="nl" data-n="03">PROJECTS</a></li>
+      <li><a href="#experience" class="nl" data-n="04">XP</a></li>
+      <li><a href="#contact"    class="nl" data-n="05">CONTACT</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="sfx-btn" id="sfxBtn" title="Toggle Sound">♪ SFX</button>
+      <span class="nav-avail"><span class="avail-dot"></span>AVAILABLE</span>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 01 – HERO / START SCREEN
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <div class="hero-inner">
+      <div class="level-badge">LEVEL <span>01</span></div>
+
+      <div class="hero-pre">
+        <span class="blink-cursor">›</span>&nbsp;player_1.connect()
+      </div>
+
+      <h1 class="hero-name glitch" data-text="MARCO LORENZ">MARCO LORENZ</h1>
+
+      <div class="hero-role">
+        <span id="heroTypewriter"></span><span class="role-blink">|</span>
+      </div>
+
+      <div class="hero-chips">
+        <span class="chip">⚡ FRONTEND DEV</span>
+        <span class="chip">🎨 UI CRAFTSMAN</span>
+        <span class="chip">🏅 IHK CERT.</span>
+        <span class="chip">📍 RODGAU, DE</span>
+      </div>
+
+      <div class="hero-cta">
+        <button class="btn-primary pulse-btn" id="pressStart">
+          <span class="pixel-arrow">▶</span> PRESS START
+          <span class="btn-glow-ring"></span>
+        </button>
+        <a href="#contact" class="btn-ghost">HIRE ME</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-chevron"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 02 – ABOUT / CHARACTER SHEET
+  ═══════════════════════════════════════ -->
+  <section id="about">
+    <div class="section-tag">LEVEL 02 · CHARACTER SHEET</div>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">PLAYER <span class="neon">INFO</span></h2>
+        <div class="head-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Player Card -->
+        <div class="player-card glass-card tilt-card">
+          <div class="pc-bar">
+            <span>PLAYER ONE</span>
+            <span class="pc-hp">HP ▓▓▓▓▓▓▓▓ 100</span>
+          </div>
+          <div class="pc-avatar">
+            <div class="avatar-hex">ML</div>
+            <div class="avatar-ring r1"></div>
+            <div class="avatar-ring r2"></div>
+          </div>
+          <div class="pc-rows">
+            <div class="pc-row"><span class="pcl">NAME</span><span class="pcv">Marco Lorenz</span></div>
+            <div class="pc-row"><span class="pcl">CLASS</span><span class="pcv neon">Frontend Developer</span></div>
+            <div class="pc-row"><span class="pcl">RANK</span><span class="pcv">IHK Fachinformatiker AE</span></div>
+            <div class="pc-row"><span class="pcl">LANG</span><span class="pcv">DE (native) · EN (B1)</span></div>
+            <div class="pc-row"><span class="pcl">ZONE</span><span class="pcv">Rodgau, Deutschland</span></div>
+            <div class="pc-row"><span class="pcl">GUILD</span><span class="pcv">🐾 Tierheim Babenhausen</span></div>
+          </div>
+          <div class="pc-status blink-text">● ONLINE · OPEN FOR HIRE</div>
+        </div>
+
+        <!-- Bio + Stats -->
+        <div class="about-right">
+          <div class="code-block">
+            <div class="cb-dot-row"><span class="cb-d r"></span><span class="cb-d y"></span><span class="cb-d g"></span><span class="cb-filename">marco.config.js</span></div>
+            <div class="cb-body">
+              <div class="cl"><span class="ck">const</span> <span class="cv">marco</span> = {</div>
+              <div class="cl ind"><span class="ckey">passion</span>: <span class="cstr">"saubere UIs &amp; stabile Features"</span>,</div>
+              <div class="cl ind"><span class="ckey">focus</span>: <span class="cstr">"interaktive Erlebnisse"</span>,</div>
+              <div class="cl ind"><span class="ckey">extra</span>: <span class="cstr">"Tierheim-Ehrenamt 🐾"</span>,</div>
+              <div class="cl ind"><span class="ckey">status</span>: <span class="cgr">"OPEN FOR PROJECTS ⚡"</span></div>
+              <div class="cl">};</div>
+            </div>
+          </div>
+
+          <p class="about-bio">
+            Fachinformatiker für Anwendungsentwicklung <em>(IHK)</em> mit echtem Feuer für UI-Entwicklung und Feature-Integration. Ich baue Interfaces, die nicht nur funktionieren — sie <em>fühlen sich richtig an</em>. Kombiniert technisches Know-how mit kreativem Designgefühl und einem Herz für Projekte, die Sinn machen.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-row" data-pct="95">
+              <span class="sn">Creativity</span>
+              <div class="sb-track"><div class="sb-fill cyan-fill" data-pct="95"></div></div>
+              <span class="sv">95</span>
+            </div>
+            <div class="stat-row" data-pct="88">
+              <span class="sn">UX / Design</span>
+              <div class="sb-track"><div class="sb-fill purple-fill" data-pct="88"></div></div>
+              <span class="sv">88</span>
+            </div>
+            <div class="stat-row" data-pct="92">
+              <span class="sn">Frontend Power</span>
+              <div class="sb-track"><div class="sb-fill cyan-fill" data-pct="92"></div></div>
+              <span class="sv">92</span>
+            </div>
+            <div class="stat-row" data-pct="75">
+              <span class="sn">Backend Know-How</span>
+              <div class="sb-track"><div class="sb-fill green-fill" data-pct="75"></div></div>
+              <span class="sv">75</span>
+            </div>
+            <div class="stat-row" data-pct="90">
+              <span class="sn">Problem Solving</span>
+              <div class="sb-track"><div class="sb-fill purple-fill" data-pct="90"></div></div>
+              <span class="sv">90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 03 – SKILLS / SKILL TREE
+  ═══════════════════════════════════════ -->
+  <section id="skills">
+    <div class="section-tag">LEVEL 03 · SKILL TREE</div>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">SKILL <span class="neon">TREE</span></h2>
+        <div class="head-line"></div>
+      </div>
+
+      <!-- Side-Scroller Runner -->
+      <div class="game-wrap">
+        <div class="game-label-row">
+          <span class="mono-sm">// skills_runner.exe — collect all skills!</span>
+          <span class="game-score">SCORE: <span id="gameScore">0</span></span>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+      </div>
+
+      <!-- Skill Categories Grid -->
+      <div class="skills-grid">
+
+        <div class="skill-cat glass-card">
+          <div class="sc-head"><span class="sc-icon">⚛️</span> FRONTEND</div>
+          <div class="sc-items">
+            <div class="sc-item" data-pct="90"><span class="sci-name">JavaScript</span><div class="sci-bar"><div class="sci-fill cyan-fill" data-pct="90"></div></div><span class="sci-pct">90%</span></div>
+            <div class="sc-item" data-pct="85"><span class="sci-name">React</span><div class="sci-bar"><div class="sci-fill cyan-fill" data-pct="85"></div></div><span class="sci-pct">85%</span></div>
+            <div class="sc-item" data-pct="92"><span class="sci-name">CSS / Sass</span><div class="sci-bar"><div class="sci-fill cyan-fill" data-pct="92"></div></div><span class="sci-pct">92%</span></div>
+            <div class="sc-item" data-pct="80"><span class="sci-name">Next.js</span><div class="sci-bar"><div class="sci-fill cyan-fill" data-pct="80"></div></div><span class="sci-pct">80%</span></div>
+          </div>
+        </div>
+
+        <div class="skill-cat glass-card">
+          <div class="sc-head"><span class="sc-icon">🎨</span> DESIGN</div>
+          <div class="sc-items">
+            <div class="sc-item" data-pct="88"><span class="sci-name">UI Design</span><div class="sci-bar"><div class="sci-fill purple-fill" data-pct="88"></div></div><span class="sci-pct">88%</span></div>
+            <div class="sc-item" data-pct="95"><span class="sci-name">Responsive</span><div class="sci-bar"><div class="sci-fill purple-fill" data-pct="95"></div></div><span class="sci-pct">95%</span></div>
+            <div class="sc-item" data-pct="82"><span class="sci-name">GSAP / Animation</span><div class="sci-bar"><div class="sci-fill purple-fill" data-pct="82"></div></div><span class="sci-pct">82%</span></div>
+            <div class="sc-item" data-pct="70"><span class="sci-name">GIMP / Bildbearbeitung</span><div class="sci-bar"><div class="sci-fill purple-fill" data-pct="70"></div></div><span class="sci-pct">70%</span></div>
+          </div>
+        </div>
+
+        <div class="skill-cat glass-card">
+          <div class="sc-head"><span class="sc-icon">⚙️</span> BACKEND</div>
+          <div class="sc-items">
+            <div class="sc-item" data-pct="75"><span class="sci-name">Node.js</span><div class="sci-bar"><div class="sci-fill green-fill" data-pct="75"></div></div><span class="sci-pct">75%</span></div>
+            <div class="sc-item" data-pct="80"><span class="sci-name">MySQL</span><div class="sci-bar"><div class="sci-fill green-fill" data-pct="80"></div></div><span class="sci-pct">80%</span></div>
+            <div class="sc-item" data-pct="70"><span class="sci-name">Python</span><div class="sci-bar"><div class="sci-fill green-fill" data-pct="70"></div></div><span class="sci-pct">70%</span></div>
+            <div class="sc-item" data-pct="68"><span class="sci-name">ColdFusion / Java</span><div class="sci-bar"><div class="sci-fill green-fill" data-pct="68"></div></div><span class="sci-pct">68%</span></div>
+          </div>
+        </div>
+
+        <div class="skill-cat glass-card">
+          <div class="sc-head"><span class="sc-icon">🔧</span> TOOLS</div>
+          <div class="sc-items">
+            <div class="sc-item" data-pct="90"><span class="sci-name">Git / GitHub</span><div class="sci-bar"><div class="sci-fill orange-fill" data-pct="90"></div></div><span class="sci-pct">90%</span></div>
+            <div class="sc-item" data-pct="70"><span class="sci-name">Docker</span><div class="sci-bar"><div class="sci-fill orange-fill" data-pct="70"></div></div><span class="sci-pct">70%</span></div>
+            <div class="sc-item" data-pct="85"><span class="sci-name">Jira / Confluence</span><div class="sci-bar"><div class="sci-fill orange-fill" data-pct="85"></div></div><span class="sci-pct">85%</span></div>
+            <div class="sc-item" data-pct="80"><span class="sci-name">WordPress</span><div class="sci-bar"><div class="sci-fill orange-fill" data-pct="80"></div></div><span class="sci-pct">80%</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 04 – PROJECTS / LEVEL SELECT
+  ═══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="section-tag">LEVEL 04 · SELECT MISSION</div>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">PROJECT <span class="neon">MISSIONS</span></h2>
+        <div class="head-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="proj-card glass-card tilt-card" data-index="0">
+          <div class="proj-badge">🎬 ENTERTAINMENT</div>
+          <div class="proj-visual" style="--gc:135deg,#1a0035,#3d0082">
+            <span class="proj-vis-text">BABA ECKE</span>
+            <div class="proj-vis-glow"></div>
+          </div>
+          <div class="proj-body">
+            <h3>Baba Ecke</h3>
+            <p>Umfassende Film- & Serien-Sammlung mit interaktiven Features und modernem Design.</p>
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <a href="#" class="proj-btn">▶ LIVE</a>
+            <a href="#" class="proj-btn ghost">⌨ CODE</a>
+          </div>
+          <div class="card-glow-corner"></div>
+        </div>
+
+        <div class="proj-card glass-card tilt-card" data-index="1">
+          <div class="proj-badge">⚡ WEB APP</div>
+          <div class="proj-visual" style="--gc:135deg,#001840,#003580">
+            <span class="proj-vis-text">PAGE MAGE</span>
+            <div class="proj-vis-glow"></div>
+          </div>
+          <div class="proj-body">
+            <h3>Page Mage</h3>
+            <p>Intelligente Web-App für dynamisches Content-Management und modernes Page-Building.</p>
+            <div class="proj-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <a href="#" class="proj-btn">▶ LIVE</a>
+            <a href="#" class="proj-btn ghost">⌨ CODE</a>
+          </div>
+          <div class="card-glow-corner"></div>
+        </div>
+
+        <div class="proj-card glass-card tilt-card" data-index="2">
+          <div class="proj-badge">🎮 INTERACTIVE</div>
+          <div class="proj-visual" style="--gc:135deg,#002818,#005535">
+            <span class="proj-vis-text">GAMING HUB</span>
+            <div class="proj-vis-glow"></div>
+          </div>
+          <div class="proj-body">
+            <h3>Gaming Hub</h3>
+            <p>3D-Interaktives Erlebnis mit Three.js & WebGL. Performance-first Spieleplattform.</p>
+            <div class="proj-tags">
+              <span>Three.js</span><span>WebGL</span><span>Canvas</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <a href="#" class="proj-btn">▶ LIVE</a>
+            <a href="#" class="proj-btn ghost">⌨ CODE</a>
+          </div>
+          <div class="card-glow-corner"></div>
+        </div>
+
+        <div class="proj-card glass-card tilt-card" data-index="3">
+          <div class="proj-badge">🐾 SOCIAL GOOD</div>
+          <div class="proj-visual" style="--gc:135deg,#2a1800,#5a3500">
+            <span class="proj-vis-text">PETBRIDGE</span>
+            <div class="proj-vis-glow"></div>
+          </div>
+          <div class="proj-body">
+            <h3>PetBridge</h3>
+            <p>Tiervermittlungs-Plattform — verbindet Tierheime mit liebevollen Familien weltweit.</p>
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <a href="#" class="proj-btn">▶ LIVE</a>
+            <a href="#" class="proj-btn ghost">⌨ CODE</a>
+          </div>
+          <div class="card-glow-corner"></div>
+        </div>
+
+        <div class="proj-card glass-card tilt-card" data-index="4">
+          <div class="proj-badge">💧 BUSINESS</div>
+          <div class="proj-visual" style="--gc:135deg,#001225,#002550">
+            <span class="proj-vis-text">AQUATIME</span>
+            <div class="proj-vis-glow"></div>
+          </div>
+          <div class="proj-body">
+            <h3>AquaTime GmbH</h3>
+            <p>Professionelle Business-Präsenz für Wasseraufbereitungs- und Wartungsservice.</p>
+            <div class="proj-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <a href="#" class="proj-btn">▶ LIVE</a>
+            <a href="#" class="proj-btn ghost">⌨ CODE</a>
+          </div>
+          <div class="card-glow-corner"></div>
+        </div>
+
+        <div class="proj-card glass-card tilt-card" data-index="5">
+          <div class="proj-badge">🏠 PORTAL</div>
+          <div class="proj-visual" style="--gc:135deg,#1e0030,#420068">
+            <span class="proj-vis-text">TIERHEIM+</span>
+            <div class="proj-vis-glow"></div>
+          </div>
+          <div class="proj-body">
+            <h3>Tierheim Suite</h3>
+            <p>Vollständiges Management-System für Tierheime: Dashboard, Tiere, Verwaltung & mehr.</p>
+            <div class="proj-tags">
+              <span>React</span><span>Prisma</span><span>PostgreSQL</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <a href="#" class="proj-btn">▶ LIVE</a>
+            <a href="#" class="proj-btn ghost">⌨ CODE</a>
+          </div>
+          <div class="card-glow-corner"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 05 – EXPERIENCE / STORY MODE
+  ═══════════════════════════════════════ -->
+  <section id="experience">
+    <div class="section-tag">LEVEL 05 · STORY MODE</div>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">CAREER <span class="neon">RUN</span></h2>
+        <div class="head-line"></div>
+      </div>
+
+      <!-- Runner Canvas -->
+      <div class="runner-wrap">
+        <canvas id="runnerCanvas"></canvas>
+        <div class="runner-label mono-sm">// career_timeline.run() — checkpoints unlocking...</div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="tl-track"></div>
+
+        <div class="tl-item tl-left reveal-tl">
+          <div class="tl-dot cyan-dot"></div>
+          <div class="tl-year">2022</div>
+          <div class="tl-card glass-card">
+            <div class="tl-badge">CHECKPOINT 01 · 💻 IT</div>
+            <h3>Praktikum – e-hoi GmbH</h3>
+            <div class="tl-period">08/2022 – 01/2023</div>
+            <p>UI-Entwicklung & Feature-Integration in bestehende Anwendungen. DB-Erweiterungen + MySQL-Abfragen. Testing & Testanweisungen.</p>
+            <div class="tl-tags"><span>UI</span><span>MySQL</span><span>Testing</span><span>Features</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right reveal-tl">
+          <div class="tl-dot purple-dot"></div>
+          <div class="tl-year">2023</div>
+          <div class="tl-card glass-card">
+            <div class="tl-badge">CHECKPOINT 02 · 🐾</div>
+            <h3>Mitarbeiter / Tierpfleger</h3>
+            <div class="tl-period">02/2023 – 01/2025 · Tierheim Babenhausen</div>
+            <p>Pflege & Betreuung der Tiere + IT-Unterstützung. Wo Empathie auf Technik trifft — Teil meiner DNA.</p>
+            <div class="tl-tags"><span>🐾 Tierheim</span><span>IT</span><span>Hands-on</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left reveal-tl">
+          <div class="tl-dot cyan-dot"></div>
+          <div class="tl-year">2024</div>
+          <div class="tl-card glass-card">
+            <div class="tl-badge">CHECKPOINT 03 · 🏅 IHK ABSCHLUSS</div>
+            <h3>Fachinformatiker AE – IHK Umschulung</h3>
+            <div class="tl-period">03/2024 – 01/2025 · IBB Institut für Berufliche Bildung</div>
+            <p>Abschluss als Fachinformatiker für Anwendungsentwicklung. Praxisprojekte, reale Softwareentwicklung & Prüfungsvorbereitung.</p>
+            <div class="tl-tags"><span>IHK</span><span>Anwendungsentwicklung</span><span>Zertifiziert ✓</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right reveal-tl">
+          <div class="tl-dot green-dot pulse-dot"></div>
+          <div class="tl-year">NOW</div>
+          <div class="tl-card glass-card featured-card">
+            <div class="tl-badge">CURRENT · ⚡ AKTIV</div>
+            <h3>Selbständig · Open for Projects</h3>
+            <div class="tl-period">2025 – PRESENT · Rodgau, DE</div>
+            <p>Frontend-Entwicklung, kreative Weberlebnisse & Portfolio-Projekte. Tierheim, Business-Seiten, interaktive Apps.</p>
+            <div class="tl-tags"><span>React</span><span>Next.js</span><span>GSAP</span><span class="tag-avail">🌟 AVAILABLE</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Earlier Experience -->
+      <div class="earlier-wrap">
+        <button class="earlier-btn" id="earlierBtn">
+          <span class="earlier-arrow">▼</span> FRÜHERE ERFAHRUNGEN (vor IT-Karriere)
+        </button>
+        <div class="earlier-list" id="earlierList">
+          <div class="earlier-item"><span class="ei-y">2018–22</span><span class="ei-r">Produktionsmitarbeiter · DiaSorin Deutschland GmbH</span><span class="ei-t">QM · Produktion</span></div>
+          <div class="earlier-item"><span class="ei-y">2017–18</span><span class="ei-r">Anlagenbauer & Lagerist · AQMOS Wasseraufbereitung GmbH</span><span class="ei-t">Logistik · Technik</span></div>
+          <div class="earlier-item"><span class="ei-y">2016–17</span><span class="ei-r">Lagerist · Europäische Zentralbank</span><span class="ei-t">Qualitätskontrolle · Inventur</span></div>
+          <div class="earlier-item"><span class="ei-y">2015–16</span><span class="ei-r">Soldat auf Zeit (Gebirgsjäger) · Bundeswehr</span><span class="ei-t">Teamwork · Disziplin</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 06 – CONTACT / TERMINAL
+  ═══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-tag">LEVEL 06 · FINAL BOSS</div>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">LET'S <span class="neon">CONNECT</span></h2>
+        <div class="head-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Terminal -->
+        <div class="terminal glass-card">
+          <div class="term-bar">
+            <div class="term-dots"><span class="td r"></span><span class="td y"></span><span class="td g"></span></div>
+            <span class="term-title">marco@dev-marco ~ %</span>
+          </div>
+          <div class="term-body" id="termBody">
+            <!-- JS fills this -->
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-right">
+          <div class="contact-chips">
+            <a href="mailto:kontakt@dev-marco.de" class="c-chip">
+              <span>✉️</span> kontakt@dev-marco.de
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="c-chip">
+              <span>⌨️</span> GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="c-chip">
+              <span>💼</span> LinkedIn
+            </a>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="cf-group">
+              <label class="cf-label">▸ YOUR_NAME:</label>
+              <input type="text" class="cf-input" name="name" placeholder="Name eingeben..." autocomplete="name" required />
+            </div>
+            <div class="cf-group">
+              <label class="cf-label">▸ YOUR_EMAIL:</label>
+              <input type="email" class="cf-input" name="email" placeholder="email@example.com" autocomplete="email" required />
+            </div>
+            <div class="cf-group">
+              <label class="cf-label">▸ MESSAGE:</label>
+              <textarea class="cf-input" name="message" rows="4" placeholder="Deine Nachricht..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <span>SEND_MESSAGE()</span>
+              <span class="btn-glow-ring"></span>
+            </button>
+            <div class="cf-success" id="cfSuccess" hidden>✓ NACHRICHT GESENDET — ICH MELDE MICH BALD!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">MARCO<span class="neon">.EXE</span></span>
+      <span class="mono-sm" style="color:var(--tx2)">// built with passion + caffeine ☕ · 2026</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GH</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LI</a>
+        <a href="mailto:kontakt@dev-marco.de">✉</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Marco Lorenz · Rodgau, Deutschland · Alle Rechte vorbehalten</div>
+  </footer>
+
+  <!-- EASTER EGG OVERLAY -->
+  <div class="easter-overlay" id="easterOverlay">
+    <canvas id="easterCanvas"></canvas>
+    <div class="easter-box glass-card">
+      <div class="easter-icon">🎮</div>
+      <h2>KONAMI CODE ACTIVATED!</h2>
+      <div class="easter-sub">↑↑↓↓←→←→BA · SECRET LEVEL DISCOVERED</div>
+      <p>+9999 XP · Achievement unlocked: <em>"Detail-Obsessed Developer"</em><br/>Wer so genau hinschaut, passt perfekt ins Team. 🏆</p>
+      <button class="btn-primary" id="easterClose">CONTINUE PLAYING</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
