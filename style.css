@@ -733,13 +733,24 @@ img, canvas { display: block; }
   overflow: hidden;
   isolation: isolate;
 }
+.proj-card[data-index="0"] .proj-visual  { background-image: url('https://picsum.photos/seed/baba-ecke-cinema/1200/700'); }
+.proj-card[data-index="1"] .proj-visual  { background-image: url('https://picsum.photos/seed/page-mage-neon/1200/700'); }
+.proj-card[data-index="2"] .proj-visual  { background-image: url('https://picsum.photos/seed/villa-kunterbunt-pets/1200/700'); }
+.proj-card[data-index="3"] .proj-visual  { background-image: url('https://picsum.photos/seed/petbridge-dog/1200/700'); }
+.proj-card[data-index="4"] .proj-visual  { background-image: url('https://picsum.photos/seed/aquatime-water/1200/700'); }
+.proj-card[data-index="5"] .proj-visual  { background-image: url('https://picsum.photos/seed/family-portal/1200/700'); }
+.proj-card[data-index="6"] .proj-visual  { background-image: url('https://picsum.photos/seed/arcade-clicker/1200/700'); }
+.proj-card[data-index="7"] .proj-visual  { background-image: url('https://picsum.photos/seed/lebkuchen-creative/1200/700'); }
+.proj-card[data-index="8"] .proj-visual  { background-image: url('https://picsum.photos/seed/showcase-blueprint/1200/700'); }
+.proj-card[data-index="9"] .proj-visual  { background-image: url('https://picsum.photos/seed/game-ui-system/1200/700'); }
+.proj-card[data-index="10"] .proj-visual { background-image: url('https://picsum.photos/seed/netlify-mission/1200/700'); }
 .proj-visual::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(4,4,10,0.05) 0%, rgba(4,4,10,0.42) 58%, rgba(4,4,10,0.72) 100%),
-    radial-gradient(circle at 75% 20%, rgba(0,240,255,0.14), transparent 38%);
+    linear-gradient(180deg, rgba(4,4,10,0.02) 0%, rgba(4,4,10,0.25) 58%, rgba(4,4,10,0.5) 100%),
+    radial-gradient(circle at 75% 20%, rgba(0,240,255,0.2), transparent 40%);
   z-index: 1;
 }
 .proj-vis-text {
@@ -747,7 +758,7 @@ img, canvas { display: block; }
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: rgba(236, 246, 255, 0.28);
+  color: rgba(236, 246, 255, 0.62);
   text-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
   z-index: 2;
   position: relative;
